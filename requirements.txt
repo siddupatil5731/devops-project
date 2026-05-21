@@ -1,0 +1,2 @@
+# Dependencies required for our application
+Flask==3.0.3
