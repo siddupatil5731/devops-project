@@ -3,156 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RoomieSync | Roommate Dashboard</title>
-    <!-- Modern Startup Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Hello World</title>
+
+    <style>
+        body{
+            margin:0;
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:#0f172a;
+            font-family:Arial, sans-serif;
+        }
+
+        h1{
+            color:#00ffd5;
+            font-size:4rem;
+            text-shadow:0 0 20px rgba(0,255,213,0.7);
+        }
+    </style>
 </head>
+
 <body>
-    <div class="container">
-        
-        <!-- Header -->
-        <header class="app-header">
-            <div class="branding">
-                <span class="logo-icon">🏠🏠🏠🏠🏠🏠 </span>
-                <div class="brand-meta">
-                    <h1>RoomieSync hostel</h1>
-                    <p class="brand-tagline">Coliving, simplified</p>
-                </div>
-            </div>
-            <div class="pipeline-status">
-                <span class="status-dot"></span>
-                <span class="status-text">Pipeline Deployment: <b>Live</b></span>
-            </div>
-        </header>
 
-        <!-- Main Dashboard Dashboard Grid -->
-        <div class="dashboard-grid">
-            
-            <!-- Left Column: Shared Expenses & Financial Ledger -->
-            <div class="column-left">
-                <!-- Net Ledger Balances -->
-                <div class="card ledger-card">
-                    <div class="card-header">
-                        <h2>Household Ledger</h2>
-                        <span class="pill status-pill">Settlement Status</span>
-                    </div>
-                    <p class="ledger-intro">Net monthly balance for each roommate:</p>
-                    <div class="ledger-list" id="ledger-balances">
-                        <!-- Dynamic calculations injected here -->
-                    </div>
-                </div>
+    <h1>Hello World 🚀</h1>
 
-                <!-- Add Shared Expense -->
-                <div class="card form-card">
-                    <div class="card-header">
-                        <h2>Log Shared Expense</h2>
-                    </div>
-                    <form id="expense-form">
-                        <div class="form-group">
-                            <label for="exp-desc">Item / Description</label>
-                            <input type="text" id="exp-desc" required placeholder="e.g. Toilet paper & paper towels">
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-6">
-                                <label for="exp-amount">Amount ($)</label>
-                                <input type="number" id="exp-amount" required step="0.01" min="0.01" placeholder="0.00">
-                            </div>
-                            <div class="form-group col-6">
-                                <label for="exp-paidby">Paid By</label>
-                                <select id="exp-paidby" required>
-                                    <!-- Dynamic list of roommates -->
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Split With</label>
-                            <div class="checkbox-group-row" id="split-checkboxes">
-                                <!-- Dynamic check selectors -->
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">Submit Expense</button>
-                    </form>
-                </div>
-
-                <!-- Recent Expenses Logs -->
-                <div class="card list-card">
-                    <div class="card-header">
-                        <h2>Shared Roomate Expenses History</h2>
-                    </div>
-                    <div class="scroll-list" id="expenses-list">
-                        <!-- Injected dynamically -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Column: Chores, Bills & Rent Calculator -->
-            <div class="column-right">
-                <!-- Chore Tracking Checklist -->
-                <div class="card chores-card">
-                    <div class="card-header">
-                        <h2>Chore Tracker</h2>
-                        <span class="progress-label" id="chore-count">0 / 0 Done</span>
-                    </div>
-                    <div class="scroll-list list-small" id="chores-list">
-                        <!-- Dynamic chores checklists -->
-                    </div>
-                    
-                    <form id="chore-form" class="add-inline-form">
-                        <input type="text" id="new-chore-title" required placeholder="Add new chore..." autocomplete="off">
-                        <select id="new-chore-assignee" required>
-                            <!-- Assignees injected here -->
-                        </select>
-                        <input type="text" id="new-chore-due" required placeholder="Due Day" value="Saturday" style="max-width: 90px;">
-                        <button type="submit" class="btn-add">+</button>
-                    </form>
-                </div>
-
-                <!-- Bill Reminders -->
-                <div class="card bills-card">
-                    <div class="card-header">
-                        <h2>Bill Reminders</h2>
-                    </div>
-                    <div class="scroll-list list-small" id="bills-list">
-                        <!-- Bill rows injected here -->
-                    </div>
-                    
-                    <form id="bill-form" class="add-inline-form">
-                        <input type="text" id="new-bill-name" required placeholder="WiFi, Water, Gas..." autocomplete="off">
-                        <input type="number" id="new-bill-amount" required step="0.01" min="0.01" placeholder="$0.00" style="max-width: 90px;">
-                        <input type="text" id="new-bill-due" required placeholder="Due date" value="June 1st" style="max-width: 95px;">
-                        <button type="submit" class="btn-add">+</button>
-                    </form>
-                </div>
-
-                <!-- Rent Splitter Calculator -->
-                <div class="card rent-card">
-                    <div class="card-header">
-                        <h2>Split Rent Calculator</h2>
-                    </div>
-                    <div class="rent-input-section">
-                        <div class="form-group">
-                            <label for="rent-total">Total Monthly Rent ($)</label>
-                            <div class="inline-action-group">
-                                <input type="number" id="rent-total" required step="0.01" min="1" value="1800.00">
-                                <button type="button" class="btn btn-outline" id="recalc-rent-btn">Split Rent</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rent-split-results">
-                        <p class="summary-label">Monthly Rent Shares:</p>
-                        <div class="rent-shares-list" id="rent-shares-list">
-                            <!-- Rent outputs dynamically injected -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
 </html>
