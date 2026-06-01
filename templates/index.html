@@ -1,32 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hostel Management System</title>
 
-    <style>
-        body{
-            margin:0;
-            height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            background:#0f172a;
-            font-family:Arial, sans-serif;
-        }
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#0f172a;
+    color:white;
+}
 
-        h1{
-            color:#00ffd5;
-            font-size:4rem;
-            text-shadow:0 0 20px rgba(0,255,213,0.7);
-        }
-    </style>
+header{
+    background:#1e293b;
+    padding:20px;
+    text-align:center;
+}
+
+header h1{
+    color:#00ffd5;
+}
+
+.container{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:40px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:#1e293b;
+    padding:20px;
+    width:250px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 0 15px rgba(0,255,213,0.2);
+}
+
+.card h2{
+    color:#00ffd5;
+}
+
+footer{
+    text-align:center;
+    padding:15px;
+    background:#1e293b;
+    position:fixed;
+    width:100%;
+    bottom:0;
+}
+</style>
 </head>
 
 <body>
 
-    <h1>Hello World </h1>
+<header>
+    <h1>Hostel Management System</h1>
+    <p>Student Accommodation Portal</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Rooms</h2>
+        <p>Available Rooms: 120</p>
+    </div>
+
+    <div class="card">
+        <h2>Students</h2>
+        <p>Registered Students: 350</p>
+    </div>
+
+    <div class="card">
+        <h2>Complaints</h2>
+        <p>Manage Hostel Complaints</p>
+    </div>
+
+    <div class="card">
+        <h2>Mess</h2>
+        <p>View Daily Mess Menu</p>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Hostel Management System
+</footer>
 
 </body>
 </html>
