@@ -6,51 +6,90 @@
 <title>Hostel Management System</title>
 
 <style>
-body{
+*{
     margin:0;
-    font-family:Arial,sans-serif;
-    background:#0f172a;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
     color:white;
 }
 
 header{
-    background:#1e293b;
-    padding:20px;
     text-align:center;
+    padding:40px;
 }
 
 header h1{
+    font-size:3rem;
     color:#00ffd5;
+}
+
+header p{
+    margin-top:10px;
+    color:#cbd5e1;
 }
 
 .container{
     display:flex;
     justify-content:center;
-    gap:20px;
-    padding:40px;
+    gap:25px;
     flex-wrap:wrap;
+    padding:30px;
 }
 
 .card{
     background:#1e293b;
-    padding:20px;
-    width:250px;
-    border-radius:10px;
+    width:280px;
+    padding:25px;
+    border-radius:15px;
     text-align:center;
-    box-shadow:0 0 15px rgba(0,255,213,0.2);
+    transition:0.3s;
+    box-shadow:0 0 15px rgba(0,255,213,0.15);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 25px rgba(0,255,213,0.4);
 }
 
 .card h2{
+    color:#00ffd5;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#cbd5e1;
+}
+
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    margin:40px 0;
+    flex-wrap:wrap;
+}
+
+.stat-box{
+    background:#0f172a;
+    padding:20px 35px;
+    border-radius:12px;
+    text-align:center;
+    border:1px solid #00ffd5;
+}
+
+.stat-box h2{
     color:#00ffd5;
 }
 
 footer{
     text-align:center;
-    padding:15px;
-    background:#1e293b;
-    position:fixed;
-    width:100%;
-    bottom:0;
+    padding:20px;
+    background:#111827;
+    margin-top:40px;
 }
 </style>
 </head>
@@ -58,36 +97,53 @@ footer{
 <body>
 
 <header>
-    <h1>Hostel Management System!!!</h1>
-    <p>Student Accommodation Portal</p>
+    <h1>🏨 Hostel Management System</h1>
+    <p>Smart and Efficient Student Accommodation Management</p>
 </header>
+
+<div class="stats">
+    <div class="stat-box">
+        <h2>350+</h2>
+        <p>Students</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>120</h2>
+        <p>Rooms</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>98%</h2>
+        <p>Occupancy</p>
+    </div>
+</div>
 
 <div class="container">
 
     <div class="card">
-        <h2>Rooms</h2>
-        <p>Available Rooms: 120</p>
+        <h2>🛏 Room Management</h2>
+        <p>Manage room allocation, vacancies and student assignments.</p>
     </div>
 
     <div class="card">
-        <h2>Students</h2>
-        <p>Registered Students: 350</p>
+        <h2>👨‍🎓 Student Records</h2>
+        <p>Store and maintain student information securely.</p>
     </div>
 
     <div class="card">
-        <h2>Complaints</h2>
-        <p>Manage Hostel Complaints</p>
+        <h2>🍽 Mess Management</h2>
+        <p>View and manage daily hostel meal schedules.</p>
     </div>
 
     <div class="card">
-        <h2>Mess</h2>
-        <p>View Daily Mess Menu</p>
+        <h2>📢 Complaints</h2>
+        <p>Track and resolve hostel maintenance complaints.</p>
     </div>
 
 </div>
 
 <footer>
-    © 2026 Hostel Management System
+    © 2026 Hostel Management System | DevOps CI/CD Deployment Demo
 </footer>
 
 </body>
